@@ -1,16 +1,20 @@
 package Work;
 
-public class NegativeAgeExcetion extends Exception{
-    public NegativeAgeExcetion(String message){
+public class NegativeAgeException extends Exception{
+    public NegativeAgeException(String message){
         super(message);
     }
 
 
-    public static double calculateAverageAge(int[] ages) throws NegativeAgeExcetion{
+    public static double calculateAverageAge(int[] ages) throws NegativeAgeException {
+        //对ages进行校验
+        if (ages == null || ages.length == 0){
+            throw new NegativeAgeException("数组不能为空");
+        }
         double totalAges = 0;
          for (int i = 0;i<ages.length;i++){
              if (ages[i] < 0){
-                 throw new NegativeAgeExcetion("年龄不能为负");
+                 throw new NegativeAgeException("年龄不能为负");
              }
               totalAges += ages[i];
          }
