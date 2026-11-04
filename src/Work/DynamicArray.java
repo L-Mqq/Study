@@ -47,7 +47,8 @@ public class DynamicArray<E>{
         for (int i =index; i < size - 1; i++){
             array[i] = array[i + 1];
         }
-        array[size] = null;
+        //把最后一个设为 null size是从 1 开始的!
+        array[size - 1] = null;
         size--;
         return temp;
     }

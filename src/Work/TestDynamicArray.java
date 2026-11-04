@@ -35,18 +35,19 @@ public class TestDynamicArray {
            System.out.println(strArray.getSize()); //10
 
            System.out.println("");
+           //分别去测试
            System.out.println(strArray.get(20));
-           System.out.println(strArray.remove(20));
-           strArray.update(20,"p");
+           //System.out.println(strArray.remove(20));
+           //strArray.update(20,"p");
 
        }catch (Exception e){
            System.out.println(e.getMessage());
        }
 
-
+        DynamicArray<Integer> intArray = null;
        try {
-            DynamicArray<Integer> intArray = new DynamicArray<>(1);
 
+           intArray = new DynamicArray<>(1);
 
             intArray.add(2);
             intArray.add(3);
@@ -80,11 +81,19 @@ public class TestDynamicArray {
 
            System.out.println("");
            System.out.println(intArray.get(20));
+       }catch (Exception e){
+           System.out.println(e.getMessage());
+       }
+
+
+       try {
            System.out.println(intArray.remove(20));
+       }catch (Exception e){
+           System.out.println(e.getMessage());
+       }
+
+       try {
            intArray.update(20,9);
-
-
-
        }catch (Exception e){
            System.out.println(e.getMessage());
        }
