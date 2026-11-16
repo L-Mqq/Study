@@ -128,7 +128,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
 
         //验证码是否正确
         String existCode = stringRedisTemplate.opsForValue().get(email);
-        ThrowUtils.throwIf(!code.equals(existCode),ErrorCode.LOGIN_ERROR_CODE);
+        ThrowUtils.throwIf(StringUtils.isBlank(existCode)||!code.equals(existCode),ErrorCode.LOGIN_ERROR_CODE);
 
         stringRedisTemplate.delete(email);
 
