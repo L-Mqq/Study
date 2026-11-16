@@ -19,8 +19,9 @@ public enum ErrorCode {
     USER_ALREADY_EXISTS(70001, "用户已存在"),
     USER_NOT_EXISTS(70002, "用户不存在"),
     REGISTER_ERROR(70003, "注册失败"),
-    LOGIN_ERROR_CODE(70004, "验证码错误"),
+    LOGIN_ERROR_CODE(70004, "验证码错误/失效"),
     LOGIN_ERROR(70005, "登录失败, 用户名或密码错误"),
+    LOGIN_PASSWORD_ERROR(70009,"密码不一致"),
     LOGIN_SEND_CODE_ERROR(70007, "验证码已发送，请稍后重试");
 
     /**

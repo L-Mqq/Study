@@ -1,8 +1,10 @@
 package org.mycode.initproject.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.mycode.initproject.model.User;
-import org.springframework.stereotype.Component;
+import org.mycode.initproject.common.BaseResponse;
+import org.mycode.initproject.model.dto.UserRegisterRequest;
+import org.mycode.initproject.model.entity.User;
+import org.mycode.initproject.model.vo.LoginAndRegisterResponse;
 
 /**
 * @author WIND
@@ -11,6 +13,9 @@ import org.springframework.stereotype.Component;
 */
 public interface UserService extends IService<User> {
 
-    public void sendCaptcha(String targetEmail);
+    void sendCaptcha(String targetEmail);
+
+    LoginAndRegisterResponse register(UserRegisterRequest userRegisterRequest);
+
 
 }

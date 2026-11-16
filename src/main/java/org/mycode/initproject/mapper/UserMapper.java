@@ -2,7 +2,7 @@ package org.mycode.initproject.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
-import org.mycode.initproject.model.User;
+import org.mycode.initproject.model.entity.User;
 
 /**
 * @author WIND

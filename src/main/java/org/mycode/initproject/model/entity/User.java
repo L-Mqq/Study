@@ -1,4 +1,4 @@
-package org.mycode.initproject.model;
+package org.mycode.initproject.model.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;

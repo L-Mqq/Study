@@ -1,21 +1,29 @@
 package org.mycode.initproject.service.impl;
 
+import cn.hutool.core.lang.Snowflake;
+import cn.hutool.core.util.IdUtil;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import cn.hutool.core.bean.BeanUtil;
 import io.micrometer.common.util.StringUtils;
+import org.apache.commons.codec.cli.Digest;
 import org.mycode.initproject.constant.UserConstant;
-import org.mycode.initproject.model.User;
+import org.mycode.initproject.model.dto.UserRegisterRequest;
+import org.mycode.initproject.model.entity.User;
 import org.mycode.initproject.mapper.UserMapper;
-import jakarta.annotation.Resource;
 import org.mycode.initproject.common.ErrorCode;
 import org.mycode.initproject.exception.ThrowUtils;
+import org.mycode.initproject.model.vo.LoginAndRegisterResponse;
 import org.mycode.initproject.service.UserService;
 import org.mycode.initproject.utils.EmailUtil;
 import org.mycode.initproject.utils.RandomCodeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.commons.util.IdUtils;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.util.DigestUtils;
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -45,6 +53,55 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         //把验证码按照邮箱存在redis里面
         stringRedisTemplate.opsForValue().set(targetEmail,randomNum, UserConstant.CAPTCHA_EXPIRE_TIME, TimeUnit.MINUTES);
     }
+
+    @Override
+    public LoginAndRegisterResponse register(UserRegisterRequest userRegisterRequest) {
+        String email = userRegisterRequest.getEmail();
+        String password = userRegisterRequest.getPassword();
+        String confirmPassword  = userRegisterRequest.getConfirmPassword();
+        String code = userRegisterRequest.getCode();
+
+        //邮箱是否存在
+        ThrowUtils.throwIf(getUser(email)!=null,ErrorCode.USER_ALREADY_EXISTS);
+
+        //密码是否一致
+        ThrowUtils.throwIf((!password.equals(confirmPassword)),ErrorCode.LOGIN_PASSWORD_ERROR);
+
+        //验证码是否正确、有效
+        String redisCode = stringRedisTemplate.opsForValue().get(email);
+        ThrowUtils.throwIf(StringUtils.isBlank(redisCode) || !code.equals(redisCode),ErrorCode.LOGIN_ERROR_CODE);
+
+        //密码加密
+        String encryptedPassword = DigestUtils.md5DigestAsHex((UserConstant.PASSWORD_SALT + password).getBytes());
+
+        //写入数据库
+        LoginAndRegisterResponse loginAndRegisterResponse = new LoginAndRegisterResponse();
+        synchronized (email.intern()){
+            Snowflake snowflake = IdUtil.getSnowflake(UserConstant.WORKER_ID,UserConstant.DATA_CENTER_ID);
+
+            User newUser = new User();
+            newUser.setUserId(snowflake.nextId());
+            newUser.setPassword(encryptedPassword);
+            newUser.setNickname(userRegisterRequest.getNickname());
+            newUser.setEmail(email);
+
+            //写入数据库
+            boolean saveUser = save(newUser);
+            ThrowUtils.throwIf(!saveUser,ErrorCode.REGISTER_ERROR);
+            //这里的user要从数据库拿 不能直接使用上面newUser 信息不全
+            BeanUtil.copyProperties(getUser(email),loginAndRegisterResponse);
+        }
+        stringRedisTemplate.delete(email);
+        return loginAndRegisterResponse;
+
+    }
+
+    public User getUser(String email){
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("email",email);
+        return this.getOne(queryWrapper);
+    }
+
 
 }
 
