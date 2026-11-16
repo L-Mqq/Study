@@ -2,6 +2,7 @@ package org.mycode.initproject.controller;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import org.mycode.initproject.model.dto.UserLoginPasswordRequest;
 import org.mycode.initproject.model.dto.UserRegisterRequest;
 import org.mycode.initproject.model.vo.LoginAndRegisterResponse;
 import  org.mycode.initproject.service.UserService;
@@ -34,6 +35,11 @@ public class UserController {
     @PostMapping("/register")
     public BaseResponse<LoginAndRegisterResponse> register(@RequestBody UserRegisterRequest userRegisterRequest){
         return ResultUtils.success (userService.register(userRegisterRequest));
+    }
+
+    @PostMapping("/login/password")
+    public BaseResponse<LoginAndRegisterResponse> loginPassword(@RequestBody UserLoginPasswordRequest userLoginPasswordRequest){
+        return ResultUtils.success(userService.loginPassword(userLoginPasswordRequest));
     }
 
 

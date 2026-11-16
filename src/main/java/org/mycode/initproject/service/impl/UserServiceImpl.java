@@ -8,6 +8,7 @@ import cn.hutool.core.bean.BeanUtil;
 import io.micrometer.common.util.StringUtils;
 import org.apache.commons.codec.cli.Digest;
 import org.mycode.initproject.constant.UserConstant;
+import org.mycode.initproject.model.dto.UserLoginPasswordRequest;
 import org.mycode.initproject.model.dto.UserRegisterRequest;
 import org.mycode.initproject.model.entity.User;
 import org.mycode.initproject.mapper.UserMapper;
@@ -92,6 +93,25 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
             BeanUtil.copyProperties(getUser(email),loginAndRegisterResponse);
         }
         stringRedisTemplate.delete(email);
+        return loginAndRegisterResponse;
+
+    }
+
+    @Override
+    public LoginAndRegisterResponse loginPassword(UserLoginPasswordRequest userLoginPasswordRequest) {
+        String email = userLoginPasswordRequest.getEmail();
+        String password = userLoginPasswordRequest.getPassword();
+
+        //判断用户是否存在
+        User user = getUser(email);
+        ThrowUtils.throwIf(user == null ,ErrorCode.USER_NOT_EXISTS);
+
+        //判断密码是否正确
+        String encryptedCode = DigestUtils.md5DigestAsHex(((UserConstant.PASSWORD_SALT) + password).getBytes());
+        ThrowUtils.throwIf(!encryptedCode.equals(user.getPassword()),ErrorCode.LOGIN_ERROR);
+
+        LoginAndRegisterResponse loginAndRegisterResponse = new LoginAndRegisterResponse();
+        BeanUtil.copyProperties(user,loginAndRegisterResponse);
         return loginAndRegisterResponse;
 
     }

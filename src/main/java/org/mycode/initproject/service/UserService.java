@@ -2,6 +2,7 @@ package org.mycode.initproject.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.mycode.initproject.common.BaseResponse;
+import org.mycode.initproject.model.dto.UserLoginPasswordRequest;
 import org.mycode.initproject.model.dto.UserRegisterRequest;
 import org.mycode.initproject.model.entity.User;
 import org.mycode.initproject.model.vo.LoginAndRegisterResponse;
@@ -17,5 +18,5 @@ public interface UserService extends IService<User> {
 
     LoginAndRegisterResponse register(UserRegisterRequest userRegisterRequest);
 
-
+    LoginAndRegisterResponse loginPassword(UserLoginPasswordRequest userLoginPasswordRequest);
 }
