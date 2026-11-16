@@ -8,6 +8,7 @@ import cn.hutool.core.bean.BeanUtil;
 import io.micrometer.common.util.StringUtils;
 import org.apache.commons.codec.cli.Digest;
 import org.mycode.initproject.constant.UserConstant;
+import org.mycode.initproject.model.dto.UserLoginCodeRequest;
 import org.mycode.initproject.model.dto.UserLoginPasswordRequest;
 import org.mycode.initproject.model.dto.UserRegisterRequest;
 import org.mycode.initproject.model.entity.User;
@@ -113,6 +114,28 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         LoginAndRegisterResponse loginAndRegisterResponse = new LoginAndRegisterResponse();
         BeanUtil.copyProperties(user,loginAndRegisterResponse);
         return loginAndRegisterResponse;
+
+    }
+
+    @Override
+    public LoginAndRegisterResponse loginCode(UserLoginCodeRequest userLoginCodeRequest) {
+        String email = userLoginCodeRequest.getEmail();
+        String code = userLoginCodeRequest.getCode();
+
+        //判断用户是否存在
+        User user = getUser(email);
+        ThrowUtils.throwIf(user == null,ErrorCode.USER_NOT_EXISTS);
+
+        //验证码是否正确
+        String existCode = stringRedisTemplate.opsForValue().get(email);
+        ThrowUtils.throwIf(!code.equals(existCode),ErrorCode.LOGIN_ERROR_CODE);
+
+        stringRedisTemplate.delete(email);
+
+        LoginAndRegisterResponse loginAndRegisterResponse = new LoginAndRegisterResponse();
+        BeanUtil.copyProperties(user,loginAndRegisterResponse);
+        return loginAndRegisterResponse;
+
 
     }
 

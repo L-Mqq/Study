@@ -1,7 +1,9 @@
 package org.mycode.initproject.controller;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import org.mycode.initproject.model.dto.UserLoginCodeRequest;
 import org.mycode.initproject.model.dto.UserLoginPasswordRequest;
 import org.mycode.initproject.model.dto.UserRegisterRequest;
 import org.mycode.initproject.model.vo.LoginAndRegisterResponse;
@@ -33,13 +35,18 @@ public class UserController {
 
 //    注册
     @PostMapping("/register")
-    public BaseResponse<LoginAndRegisterResponse> register(@RequestBody UserRegisterRequest userRegisterRequest){
+    public BaseResponse<LoginAndRegisterResponse> register(@RequestBody @Valid UserRegisterRequest userRegisterRequest){
         return ResultUtils.success (userService.register(userRegisterRequest));
     }
 
     @PostMapping("/login/password")
-    public BaseResponse<LoginAndRegisterResponse> loginPassword(@RequestBody UserLoginPasswordRequest userLoginPasswordRequest){
+    public BaseResponse<LoginAndRegisterResponse> loginPassword(@RequestBody @Valid UserLoginPasswordRequest userLoginPasswordRequest){
         return ResultUtils.success(userService.loginPassword(userLoginPasswordRequest));
+    }
+
+    @PostMapping("/login/code")
+    public BaseResponse<LoginAndRegisterResponse> loginCode(@RequestBody @Valid UserLoginCodeRequest userLoginCodeRequest){
+        return ResultUtils.success(userService.loginCode(userLoginCodeRequest));
     }
 
 
