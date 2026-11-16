@@ -18,6 +18,7 @@ import org.mycode.initproject.exception.ThrowUtils;
 import org.mycode.initproject.model.vo.LoginAndRegisterResponse;
 import org.mycode.initproject.service.UserService;
 import org.mycode.initproject.utils.EmailUtil;
+import org.mycode.initproject.utils.JwtUtil;
 import org.mycode.initproject.utils.RandomCodeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.commons.util.IdUtils;
@@ -94,7 +95,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
             BeanUtil.copyProperties(getUser(email),loginAndRegisterResponse);
         }
         stringRedisTemplate.delete(email);
-        return loginAndRegisterResponse;
+        return createJWT(loginAndRegisterResponse);
 
     }
 
@@ -113,7 +114,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
 
         LoginAndRegisterResponse loginAndRegisterResponse = new LoginAndRegisterResponse();
         BeanUtil.copyProperties(user,loginAndRegisterResponse);
-        return loginAndRegisterResponse;
+        return createJWT(loginAndRegisterResponse);
 
     }
 
@@ -134,7 +135,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
 
         LoginAndRegisterResponse loginAndRegisterResponse = new LoginAndRegisterResponse();
         BeanUtil.copyProperties(user,loginAndRegisterResponse);
-        return loginAndRegisterResponse;
+        return createJWT(loginAndRegisterResponse);
 
 
     }
@@ -143,6 +144,21 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("email",email);
         return this.getOne(queryWrapper);
+    }
+
+    public LoginAndRegisterResponse createJWT(LoginAndRegisterResponse loginAndRegisterResponse){
+       String userId = loginAndRegisterResponse.getUserId().toString();
+       String accessToken = JwtUtil.generate(userId,UserConstant.ACCESS_TOKEN_EXPIRE_TIME,UserConstant.ACCESS_TOKEN_UNIT);
+       String refreshToken = JwtUtil.generate(userId,UserConstant.REFRESH_TOKEN_EXPIRE_TIME,UserConstant.REFRESH_TOKEN_UNIT);
+
+       loginAndRegisterResponse.setAccessToken(accessToken);
+       loginAndRegisterResponse.setRefreshToken(refreshToken);
+
+//       把token存在redis里面！！
+        stringRedisTemplate.opsForValue().set(loginAndRegisterResponse.getEmail(),accessToken);
+        stringRedisTemplate.opsForValue().set(loginAndRegisterResponse.getEmail(),refreshToken);
+
+       return loginAndRegisterResponse;
     }
 
 

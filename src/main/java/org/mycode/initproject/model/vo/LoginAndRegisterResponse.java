@@ -15,4 +15,8 @@ public class LoginAndRegisterResponse {
     private Integer gender;
 
     private String description;
+
+    private String accessToken;
+
+    private String refreshToken;
 }
