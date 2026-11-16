@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Maven: com.alibaba.nacos:logback-adapter:1.0.1" type="java-imported" external-system-id="Maven">
+    <properties groupId="com.alibaba.nacos" artifactId="logback-adapter" version="1.0.1" baseVersion="1.0.1" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/nacos/logback-adapter/1.0.1/logback-adapter-1.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/nacos/logback-adapter/1.0.1/logback-adapter-1.0.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/nacos/logback-adapter/1.0.1/logback-adapter-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
