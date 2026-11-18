@@ -22,4 +22,6 @@ public interface UserService extends IService<User> {
     LoginAndRegisterResponse loginPassword(UserLoginPasswordRequest userLoginPasswordRequest);
 
     LoginAndRegisterResponse loginCode(UserLoginCodeRequest userLoginCodeRequest);
+
+    boolean logout(String userId);
 }

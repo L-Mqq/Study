@@ -161,6 +161,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
        return loginAndRegisterResponse;
     }
 
+    public boolean logout(String userId){
+        stringRedisTemplate.delete(UserConstant.ACCESS_TOKEN_PREFIX + userId);
+        stringRedisTemplate.delete(UserConstant.REFRESH_TOKEN_PREFIX + userId);
+        return true;
+    }
+
 
 }
 

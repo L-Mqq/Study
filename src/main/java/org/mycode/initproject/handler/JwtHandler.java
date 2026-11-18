@@ -32,11 +32,12 @@ public class JwtHandler implements HandlerInterceptor {
                 Claims acParse = JwtUtil.parse(accessToken);
                 if (acParse != null){
                     //2.获取id
-                    String userID = acParse.getSubject();
+                    String userId = acParse.getSubject();
                     //3.从redis中获取token
-                    String redisAccessToken = stringRedisTemplate.opsForValue().get(UserConstant.ACCESS_TOKEN_PREFIX + userID);
+                    String redisAccessToken = stringRedisTemplate.opsForValue().get(UserConstant.ACCESS_TOKEN_PREFIX + userId);
                     //4.对token进行比对
                     if (accessToken.equals(redisAccessToken)){
+                        request.setAttribute("userId",userId);
                         return true;
                     }
                 }

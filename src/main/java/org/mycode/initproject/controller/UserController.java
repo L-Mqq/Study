@@ -1,8 +1,10 @@
 package org.mycode.initproject.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import org.mycode.initproject.exception.ThrowUtils;
 import org.mycode.initproject.model.dto.UserLoginCodeRequest;
 import org.mycode.initproject.model.dto.UserLoginPasswordRequest;
 import org.mycode.initproject.model.dto.UserRegisterRequest;
@@ -49,6 +51,11 @@ public class UserController {
         return ResultUtils.success(userService.loginCode(userLoginCodeRequest));
     }
 
+    @GetMapping("/logout")
+    public BaseResponse<Boolean> logout(HttpServletRequest request){
+       String userId = request.getAttribute("userId").toString();
+       return ResultUtils.success(userService.logout(userId));
+    }
 
 
 }
