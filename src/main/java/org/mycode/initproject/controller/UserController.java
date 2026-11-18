@@ -1,5 +1,6 @@
 package org.mycode.initproject.controller;
 
+import io.jsonwebtoken.Claims;
 import io.micrometer.common.util.StringUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
@@ -19,6 +20,7 @@ import org.mycode.initproject.common.BaseResponse;
 import org.mycode.initproject.common.ResultUtils;
 import org.mycode.initproject.constant.UserConstant;
 import org.mycode.initproject.service.UserService;
+import org.mycode.initproject.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -58,8 +60,10 @@ public class UserController {
 
     @GetMapping("/logout")
     public BaseResponse<Boolean> logout(HttpServletRequest request){
-       String userId = request.getAttribute("userId").toString();
-       return ResultUtils.success(userService.logout(userId));
+        String accessToken = request.getHeader("Access-Token");
+        Claims acParse = JwtUtil.parse(accessToken);
+        ThrowUtils.throwIf(acParse == null, ErrorCode.TOKEN_EXPIRED);
+       return ResultUtils.success(userService.logout(acParse.getSubject()));
     }
 
     @PostMapping("/refresh")
