@@ -154,9 +154,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
        loginAndRegisterResponse.setAccessToken(accessToken);
        loginAndRegisterResponse.setRefreshToken(refreshToken);
 
-//       把token存在redis里面！！
-        stringRedisTemplate.opsForValue().set(loginAndRegisterResponse.getEmail(),accessToken);
-        stringRedisTemplate.opsForValue().set(loginAndRegisterResponse.getEmail(),refreshToken);
+        //把token存在redis里面！！
+        stringRedisTemplate.opsForValue().set(UserConstant.ACCESS_TOKEN_PREFIX + userId,accessToken,UserConstant.ACCESS_TOKEN_EXPIRE_TIME,UserConstant.ACCESS_TOKEN_UNIT);
+        stringRedisTemplate.opsForValue().set(UserConstant.REFRESH_TOKEN_PREFIX + userId,refreshToken,UserConstant.REFRESH_TOKEN_EXPIRE_TIME,UserConstant.REFRESH_TOKEN_UNIT);
 
        return loginAndRegisterResponse;
     }
