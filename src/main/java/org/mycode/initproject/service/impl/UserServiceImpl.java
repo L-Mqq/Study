@@ -5,6 +5,7 @@ import cn.hutool.core.util.IdUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import cn.hutool.core.bean.BeanUtil;
+import io.jsonwebtoken.Claims;
 import io.micrometer.common.util.StringUtils;
 import org.apache.commons.codec.cli.Digest;
 import org.mycode.initproject.constant.UserConstant;
@@ -16,6 +17,7 @@ import org.mycode.initproject.mapper.UserMapper;
 import org.mycode.initproject.common.ErrorCode;
 import org.mycode.initproject.exception.ThrowUtils;
 import org.mycode.initproject.model.vo.LoginAndRegisterResponse;
+import org.mycode.initproject.model.vo.TokenResponse;
 import org.mycode.initproject.service.UserService;
 import org.mycode.initproject.utils.EmailUtil;
 import org.mycode.initproject.utils.JwtUtil;
@@ -167,6 +169,31 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         return true;
     }
 
+    public TokenResponse refreshToken(String refreshToken){
+
+        //1.解析refreshToken
+        Claims rfParse = JwtUtil.parse(refreshToken);
+        ThrowUtils.throwIf(rfParse == null,ErrorCode.PARAMS_ERROR);
+
+        //2.获取userid
+        String userId = rfParse.getSubject();
+
+        //3.和redis里面的token进行比对
+        String redisRefreshToken = stringRedisTemplate.opsForValue().get(UserConstant.REFRESH_TOKEN_PREFIX + userId);
+        ThrowUtils.throwIf(!refreshToken.equals(redisRefreshToken),ErrorCode.PARAMS_ERROR);
+
+        //4.通过则重新生成两个token
+        String newAccessToken = JwtUtil.generate(userId,UserConstant.ACCESS_TOKEN_EXPIRE_TIME,UserConstant.ACCESS_TOKEN_UNIT);
+        String newRefreshToken = JwtUtil.generate(userId,UserConstant.REFRESH_TOKEN_EXPIRE_TIME,UserConstant.REFRESH_TOKEN_UNIT);
+
+        //5.更新redis里面的token
+        stringRedisTemplate.opsForValue().set(UserConstant.ACCESS_TOKEN_PREFIX + userId,newAccessToken,UserConstant.ACCESS_TOKEN_EXPIRE_TIME,UserConstant.ACCESS_TOKEN_UNIT);
+        stringRedisTemplate.opsForValue().set(UserConstant.REFRESH_TOKEN_PREFIX + userId,newRefreshToken,UserConstant.REFRESH_TOKEN_EXPIRE_TIME,UserConstant.REFRESH_TOKEN_UNIT);
+
+        //6.返回两个token
+       return TokenResponse.builder().accessToken(newAccessToken).refreshToken(newRefreshToken).build();
+
+    }
 
 }
 

@@ -17,7 +17,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Autowired JwtHandler jwtHandler;
     //1.收集不需要身份认证的接口
     private final ArrayList<String> excludePath = new ArrayList<>(
-            Arrays.asList("/api/user/login/code","/api/user/register","/api/user/sendCaptcha","/api/user/login/password")
+            Arrays.asList("/api/user/login/code","/api/user/register","/api/user/sendCaptcha","/api/user/login/password","/api/user/refresh")
     );
     //2.对以上接口进行排除
 

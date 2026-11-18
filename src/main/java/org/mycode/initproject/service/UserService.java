@@ -7,6 +7,7 @@ import org.mycode.initproject.model.dto.UserLoginPasswordRequest;
 import org.mycode.initproject.model.dto.UserRegisterRequest;
 import org.mycode.initproject.model.entity.User;
 import org.mycode.initproject.model.vo.LoginAndRegisterResponse;
+import org.mycode.initproject.model.vo.TokenResponse;
 
 /**
 * @author WIND
@@ -24,4 +25,6 @@ public interface UserService extends IService<User> {
     LoginAndRegisterResponse loginCode(UserLoginCodeRequest userLoginCodeRequest);
 
     boolean logout(String userId);
+
+    TokenResponse refreshToken(String refreshToken);
 }

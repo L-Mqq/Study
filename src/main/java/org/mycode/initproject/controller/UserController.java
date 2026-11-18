@@ -1,14 +1,17 @@
 package org.mycode.initproject.controller;
 
+import io.micrometer.common.util.StringUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import org.mycode.initproject.common.ErrorCode;
 import org.mycode.initproject.exception.ThrowUtils;
 import org.mycode.initproject.model.dto.UserLoginCodeRequest;
 import org.mycode.initproject.model.dto.UserLoginPasswordRequest;
 import org.mycode.initproject.model.dto.UserRegisterRequest;
 import org.mycode.initproject.model.vo.LoginAndRegisterResponse;
+import org.mycode.initproject.model.vo.TokenResponse;
 import  org.mycode.initproject.service.UserService;
 import org.mycode.initproject.service.impl.UserServiceImpl;
 import jakarta.annotation.Resource;
@@ -19,6 +22,8 @@ import org.mycode.initproject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.concurrent.locks.ReentrantLock;
 
 @RestController
 @RequestMapping("/api/user")
@@ -55,6 +60,13 @@ public class UserController {
     public BaseResponse<Boolean> logout(HttpServletRequest request){
        String userId = request.getAttribute("userId").toString();
        return ResultUtils.success(userService.logout(userId));
+    }
+
+    @PostMapping("/refresh")
+    public BaseResponse<TokenResponse> refreshToken(HttpServletRequest request){
+        String refreshToken = request.getHeader("Refresh-Token");
+        ThrowUtils.throwIf(StringUtils.isBlank(refreshToken), ErrorCode.PARAMS_ERROR);
+        return ResultUtils.success(userService.refreshToken(refreshToken));
     }
 
 
