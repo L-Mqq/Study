@@ -8,6 +8,14 @@ spring:
     password: 1212
     driver-class-name: com.mysql.cj.jdbc.Driver  #mysql驱动类
 
+  data:
+    redis:
+      host: localhost
+      port: 59000
+      password: e65K4t8w2
+      database: 0
+      timeout: 3000ms
+
 #配置mybatis-plus
 mybatis-plus:
   configuration:
