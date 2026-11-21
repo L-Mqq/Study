@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: MyMiniprogram
+
+  datasource:   #配置数据库
+    url: jdbc:mysql://localhost:3306/my_test_db?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 1212
+    driver-class-name: com.mysql.cj.jdbc.Driver  #mysql驱动类
+
+#配置mybatis-plus
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #在控制台打印日志
+
+  global-config:
+    db-config:
+      id-type: auto #设置全局主键生成策略为数据库自增。
+
+logging:
+  level:
+    root: INFO  #全局日志级别
+    com.mycode.myminiprogram: DEBUG  #指定包的日志级别
+  file:
+    name: logs/task-management.log  #日志输出到文件

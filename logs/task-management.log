@@ -1,0 +1,23 @@
+2026-11-13T13:59:18.233+08:00  INFO 12396 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 12396 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
+2026-11-13T13:59:18.237+08:00  INFO 12396 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-11-13T13:59:19.143+08:00  INFO 12396 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-11-13T13:59:19.158+08:00  INFO 12396 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-13T13:59:19.159+08:00  INFO 12396 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-13T13:59:19.212+08:00  INFO 12396 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 938 ms
+2026-11-13T13:59:19.825+08:00  INFO 12396 --- [MyMiniprogram] [main] b.m.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@2371aaca
+2026-11-13T13:59:19.881+08:00  INFO 12396 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-11-13T13:59:19.885+08:00  INFO 12396 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Started MyMiniprogramApplication in 2.082 seconds (process running for 2.419)
+2026-11-13T13:59:25.594+08:00  INFO 12396 --- [MyMiniprogram] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-13T13:59:25.594+08:00  INFO 12396 --- [MyMiniprogram] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-13T13:59:25.596+08:00  INFO 12396 --- [MyMiniprogram] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-11-13T13:59:25.642+08:00  INFO 12396 --- [MyMiniprogram] [http-nio-8080-exec-2] o.m.myminiprogram.impl.TaskServiceImpl   : 开始查询
+2026-11-13T13:59:25.860+08:00  INFO 12396 --- [MyMiniprogram] [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-13T13:59:26.024+08:00  INFO 12396 --- [MyMiniprogram] [http-nio-8080-exec-2] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@94f6196
+2026-11-13T13:59:26.027+08:00  INFO 12396 --- [MyMiniprogram] [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-13T13:59:26.102+08:00  INFO 12396 --- [MyMiniprogram] [http-nio-8080-exec-2] o.m.myminiprogram.impl.TaskServiceImpl   : 任务查询完成
+2026-11-13T14:01:09.704+08:00  INFO 12396 --- [MyMiniprogram] [http-nio-8080-exec-5] o.m.myminiprogram.impl.TaskServiceImpl   : 开始查询
+2026-11-13T14:01:09.716+08:00  INFO 12396 --- [MyMiniprogram] [http-nio-8080-exec-5] o.m.myminiprogram.impl.TaskServiceImpl   : 任务查询完成
+2026-11-13T14:01:21.478+08:00  INFO 12396 --- [MyMiniprogram] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-13T14:01:21.529+08:00  INFO 12396 --- [MyMiniprogram] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-11-13T14:01:21.531+08:00  INFO 12396 --- [MyMiniprogram] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-11-13T14:01:21.536+08:00  INFO 12396 --- [MyMiniprogram] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
