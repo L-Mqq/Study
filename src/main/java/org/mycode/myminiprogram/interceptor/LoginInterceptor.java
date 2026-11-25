@@ -5,12 +5,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.mycode.myminiprogram.dto.UserDto;
 import org.mycode.myminiprogram.utils.UserHolder;
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import tools.jackson.databind.json.JsonMapper;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 @Component
@@ -26,6 +26,8 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     @Resource
     private UserHolder userHolder;
+
+    @Resource
     private JsonMapper jsonMapper;
 
     public boolean preHandle  (HttpServletRequest request, HttpServletResponse response,Object handler){
@@ -46,11 +48,21 @@ public class LoginInterceptor implements HandlerInterceptor {
         //如果不存在 拒绝请求 如果存在
         //把用户信息放在userholder 后面就可以直接使用用户信息  token续期！！！
         UserDto userDto = jsonMapper.readValue(userDtoJson,UserDto.class);
+        System.out.println("Redis获取的用户：" + userDto);
         userHolder.setUser(userDto);
-        stringRedisTemplate.expire(key,TOKEN_EXPIRE_TIME, TimeUnit.MINUTES);
-        //放行请求  清理请求！！
-        userHolder.delUser();
+
+        //token续期！！！
+        //stringRedisTemplate.expire(key,TOKEN_EXPIRE_TIME, TimeUnit.MINUTES);
+        boolean renewed = stringRedisTemplate.expire(key, Duration.ofMinutes(TOKEN_EXPIRE_TIME));
+
+
         return true;
 }
+        @Override
+        public void afterCompletion(HttpServletRequest request,HttpServletResponse response,Object handler,Exception ex) throws Exception{
+        //放行请求  清理请求！！ 应该在请求完成后才清除用户信息
+        userHolder.delUser();
+
+    }
 
 }

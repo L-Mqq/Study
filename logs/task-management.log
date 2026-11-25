@@ -1,181 +1,171 @@
-2026-11-21T14:40:51.839+08:00  INFO 11412 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 11412 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
-2026-11-21T14:40:51.847+08:00  INFO 11412 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-11-21T14:40:52.493+08:00  INFO 11412 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-11-21T14:40:52.496+08:00  INFO 11412 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-11-21T14:40:52.541+08:00  INFO 11412 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
-2026-11-21T14:40:53.464+08:00  INFO 11412 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-11-21T14:40:53.482+08:00  INFO 11412 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-11-21T14:40:53.482+08:00  INFO 11412 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
-2026-11-21T14:40:53.547+08:00  INFO 11412 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1649 ms
-2026-11-21T14:40:53.621+08:00  WARN 11412 --- [MyMiniprogram] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webconfig': Unsatisfied dependency expressed through field 'loginInterceptor': No qualifying bean of type 'org.mycode.myminiprogram.interceptor.LoginInterceptor' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2026-11-21T14:40:53.624+08:00  INFO 11412 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2026-11-21T14:40:53.644+08:00  INFO 11412 --- [MyMiniprogram] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-11-21T14:40:53.664+08:00 ERROR 11412 --- [MyMiniprogram] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field loginInterceptor in org.mycode.myminiprogram.config.Webconfig required a bean of type 'org.mycode.myminiprogram.interceptor.LoginInterceptor' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'org.mycode.myminiprogram.interceptor.LoginInterceptor' in your configuration.
-
-2026-11-21T14:42:40.761+08:00  INFO 42332 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 42332 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
-2026-11-21T14:42:40.765+08:00  INFO 42332 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-11-21T14:42:41.359+08:00  INFO 42332 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-11-21T14:42:41.361+08:00  INFO 42332 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-11-21T14:42:41.390+08:00  INFO 42332 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-2026-11-21T14:42:42.066+08:00  INFO 42332 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-11-21T14:42:42.083+08:00  INFO 42332 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-11-21T14:42:42.084+08:00  INFO 42332 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
-2026-11-21T14:42:42.150+08:00  INFO 42332 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1346 ms
-2026-11-21T14:42:42.214+08:00  WARN 42332 --- [MyMiniprogram] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webconfig': Unsatisfied dependency expressed through field 'loginInterceptor': No qualifying bean of type 'org.mycode.myminiprogram.interceptor.LoginInterceptor' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-2026-11-21T14:42:42.217+08:00  INFO 42332 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2026-11-21T14:42:42.235+08:00  INFO 42332 --- [MyMiniprogram] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-11-21T14:42:42.250+08:00 ERROR 42332 --- [MyMiniprogram] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field loginInterceptor in org.mycode.myminiprogram.config.Webconfig required a bean of type 'org.mycode.myminiprogram.interceptor.LoginInterceptor' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'org.mycode.myminiprogram.interceptor.LoginInterceptor' in your configuration.
-
-2026-11-21T14:43:43.397+08:00  INFO 44180 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 44180 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
-2026-11-21T14:43:43.401+08:00  INFO 44180 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-11-21T14:43:43.993+08:00  INFO 44180 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-11-21T14:43:43.995+08:00  INFO 44180 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-11-21T14:43:44.026+08:00  INFO 44180 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-2026-11-21T14:43:44.738+08:00  INFO 44180 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-11-21T14:43:44.753+08:00  INFO 44180 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-11-21T14:43:44.753+08:00  INFO 44180 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
-2026-11-21T14:43:44.821+08:00  INFO 44180 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1372 ms
-2026-11-21T14:43:45.816+08:00  INFO 44180 --- [MyMiniprogram] [main] b.m.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@40f70521
-2026-11-21T14:43:46.365+08:00  INFO 44180 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-11-21T14:43:46.374+08:00  INFO 44180 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Started MyMiniprogramApplication in 3.43 seconds (process running for 3.789)
-2026-11-21T14:45:20.422+08:00  INFO 44180 --- [MyMiniprogram] [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-11-21T14:45:20.430+08:00  INFO 44180 --- [MyMiniprogram] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-11-21T14:45:20.446+08:00  INFO 44180 --- [MyMiniprogram] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
-2026-11-21T14:45:59.872+08:00  INFO 44180 --- [MyMiniprogram] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-11-21T14:45:59.984+08:00  INFO 44180 --- [MyMiniprogram] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-11-21T14:46:06.702+08:00  INFO 12680 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 12680 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
-2026-11-21T14:46:06.705+08:00  INFO 12680 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-11-21T14:46:07.473+08:00  INFO 12680 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-11-21T14:46:07.480+08:00  INFO 12680 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-11-21T14:46:07.531+08:00  INFO 12680 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
-2026-11-21T14:46:08.202+08:00  INFO 12680 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-11-21T14:46:08.215+08:00  INFO 12680 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-11-21T14:46:08.215+08:00  INFO 12680 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
-2026-11-21T14:46:08.275+08:00  INFO 12680 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1531 ms
-2026-11-21T14:46:09.019+08:00  INFO 12680 --- [MyMiniprogram] [main] b.m.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@40f70521
-2026-11-21T14:46:09.525+08:00  INFO 12680 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-11-21T14:46:09.535+08:00  INFO 12680 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Started MyMiniprogramApplication in 3.359 seconds (process running for 3.745)
-2026-11-21T14:46:10.927+08:00  INFO 12680 --- [MyMiniprogram] [http-nio-8080-exec-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-11-21T14:46:10.927+08:00  INFO 12680 --- [MyMiniprogram] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-11-21T14:46:10.930+08:00  INFO 12680 --- [MyMiniprogram] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2026-11-21T14:48:54.967+08:00  INFO 12680 --- [MyMiniprogram] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-11-21T14:48:55.043+08:00  INFO 12680 --- [MyMiniprogram] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-11-21T14:49:00.610+08:00  INFO 39620 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 39620 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
-2026-11-21T14:49:00.614+08:00  INFO 39620 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-11-21T14:49:01.271+08:00  INFO 39620 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-11-21T14:49:01.275+08:00  INFO 39620 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-11-21T14:49:01.317+08:00  INFO 39620 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
-2026-11-21T14:49:02.137+08:00  INFO 39620 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-11-21T14:49:02.155+08:00  INFO 39620 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-11-21T14:49:02.156+08:00  INFO 39620 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
-2026-11-21T14:49:02.219+08:00  INFO 39620 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1560 ms
-2026-11-21T14:49:03.683+08:00  INFO 39620 --- [MyMiniprogram] [main] b.m.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@40f70521
-2026-11-21T14:49:03.926+08:00  INFO 39620 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-11-21T14:49:03.936+08:00  INFO 39620 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Started MyMiniprogramApplication in 3.762 seconds (process running for 4.145)
-2026-11-21T14:49:06.859+08:00  INFO 39620 --- [MyMiniprogram] [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-11-21T14:49:06.861+08:00  INFO 39620 --- [MyMiniprogram] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-11-21T14:49:06.864+08:00  INFO 39620 --- [MyMiniprogram] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2026-11-21T14:51:43.181+08:00  INFO 39620 --- [MyMiniprogram] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-11-21T14:51:43.255+08:00  INFO 39620 --- [MyMiniprogram] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-11-21T14:51:50.199+08:00  INFO 21576 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 21576 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
-2026-11-21T14:51:50.201+08:00  INFO 21576 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-11-21T14:51:50.789+08:00  INFO 21576 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-11-21T14:51:50.791+08:00  INFO 21576 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-11-21T14:51:50.827+08:00  INFO 21576 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
-2026-11-21T14:51:51.548+08:00  INFO 21576 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-11-21T14:51:51.565+08:00  INFO 21576 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-11-21T14:51:51.566+08:00  INFO 21576 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
-2026-11-21T14:51:51.631+08:00  INFO 21576 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1386 ms
-2026-11-21T14:51:52.095+08:00  WARN 21576 --- [MyMiniprogram] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webconfig': Unsatisfied dependency expressed through field 'loginInterceptor': Error creating bean with name 'loginInterceptor': Injection of resource dependencies failed
-2026-11-21T14:51:52.109+08:00  INFO 21576 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2026-11-21T14:51:52.125+08:00  INFO 21576 --- [MyMiniprogram] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-11-21T14:51:52.140+08:00 ERROR 21576 --- [MyMiniprogram] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field loginInterceptor in org.mycode.myminiprogram.config.Webconfig required a bean of type 'org.mycode.myminiprogram.utils.UserHolder' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'org.mycode.myminiprogram.utils.UserHolder' in your configuration.
-
-2026-11-21T14:52:27.057+08:00  INFO 46684 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 46684 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
-2026-11-21T14:52:27.061+08:00  INFO 46684 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-11-21T14:52:27.669+08:00  INFO 46684 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-11-21T14:52:27.671+08:00  INFO 46684 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-11-21T14:52:27.702+08:00  INFO 46684 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
-2026-11-21T14:52:28.398+08:00  INFO 46684 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-11-21T14:52:28.413+08:00  INFO 46684 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-11-21T14:52:28.414+08:00  INFO 46684 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
-2026-11-21T14:52:28.483+08:00  INFO 46684 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1375 ms
-2026-11-21T14:52:29.751+08:00  INFO 46684 --- [MyMiniprogram] [main] b.m.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@45905bff
-2026-11-21T14:52:29.896+08:00  INFO 46684 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-11-21T14:52:29.904+08:00  INFO 46684 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Started MyMiniprogramApplication in 3.331 seconds (process running for 3.685)
-2026-11-21T14:52:35.708+08:00  INFO 46684 --- [MyMiniprogram] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-11-21T14:52:35.708+08:00  INFO 46684 --- [MyMiniprogram] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-11-21T14:52:35.710+08:00  INFO 46684 --- [MyMiniprogram] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2026-11-21T14:53:48.910+08:00  INFO 46684 --- [MyMiniprogram] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-11-21T14:53:48.981+08:00  INFO 46684 --- [MyMiniprogram] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
-2026-11-21T14:53:55.296+08:00  INFO 36732 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 36732 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
-2026-11-21T14:53:55.300+08:00  INFO 36732 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
-2026-11-21T14:53:55.850+08:00  INFO 36732 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2026-11-21T14:53:55.852+08:00  INFO 36732 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2026-11-21T14:53:55.879+08:00  INFO 36732 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
-2026-11-21T14:53:56.699+08:00  INFO 36732 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-11-21T14:53:56.711+08:00  INFO 36732 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-11-21T14:53:56.711+08:00  INFO 36732 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
-2026-11-21T14:53:56.781+08:00  INFO 36732 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1438 ms
-2026-11-21T14:53:58.109+08:00  INFO 36732 --- [MyMiniprogram] [main] b.m.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@45905bff
-2026-11-21T14:53:58.263+08:00  INFO 36732 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-11-21T14:53:58.271+08:00  INFO 36732 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Started MyMiniprogramApplication in 3.403 seconds (process running for 3.769)
-2026-11-21T14:54:02.334+08:00  INFO 36732 --- [MyMiniprogram] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-11-21T14:54:02.335+08:00  INFO 36732 --- [MyMiniprogram] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-11-21T14:54:02.345+08:00  INFO 36732 --- [MyMiniprogram] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2026-11-21T14:54:56.519+08:00  INFO 36732 --- [MyMiniprogram] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-11-21T14:54:56.608+08:00  INFO 36732 --- [MyMiniprogram] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-11-25T17:05:58.062+08:00  INFO 25140 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 25140 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
+2026-11-25T17:05:58.075+08:00  INFO 25140 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-11-25T17:05:58.882+08:00  INFO 25140 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-25T17:05:58.886+08:00  INFO 25140 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-25T17:05:58.920+08:00  INFO 25140 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2026-11-25T17:05:59.832+08:00  INFO 25140 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-11-25T17:05:59.850+08:00  INFO 25140 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-25T17:05:59.851+08:00  INFO 25140 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-25T17:05:59.921+08:00  INFO 25140 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1774 ms
+2026-11-25T17:06:03.981+08:00  INFO 25140 --- [MyMiniprogram] [main] b.m.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@45905bff
+2026-11-25T17:06:04.176+08:00  INFO 25140 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-11-25T17:06:04.185+08:00  INFO 25140 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Started MyMiniprogramApplication in 6.695 seconds (process running for 7.188)
+2026-11-25T17:06:09.819+08:00  INFO 25140 --- [MyMiniprogram] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-25T17:06:09.819+08:00  INFO 25140 --- [MyMiniprogram] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-25T17:06:09.821+08:00  INFO 25140 --- [MyMiniprogram] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-11-25T17:06:09.855+08:00  WARN 25140 --- [MyMiniprogram] [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2026-11-25T17:09:30.306+08:00  INFO 25140 --- [MyMiniprogram] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-25T17:09:30.395+08:00  INFO 25140 --- [MyMiniprogram] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-11-25T17:12:49.018+08:00  INFO 23632 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 23632 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
+2026-11-25T17:12:49.021+08:00  INFO 23632 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-11-25T17:12:49.569+08:00  INFO 23632 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-25T17:12:49.572+08:00  INFO 23632 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-25T17:12:49.602+08:00  INFO 23632 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2026-11-25T17:12:50.320+08:00  INFO 23632 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-11-25T17:12:50.335+08:00  INFO 23632 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-25T17:12:50.336+08:00  INFO 23632 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-25T17:12:50.403+08:00  INFO 23632 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1341 ms
+2026-11-25T17:12:51.649+08:00  INFO 23632 --- [MyMiniprogram] [main] b.m.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@45905bff
+2026-11-25T17:12:51.830+08:00  INFO 23632 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-11-25T17:12:51.837+08:00  INFO 23632 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Started MyMiniprogramApplication in 3.256 seconds (process running for 3.619)
+2026-11-25T17:12:56.416+08:00  INFO 23632 --- [MyMiniprogram] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-25T17:12:56.416+08:00  INFO 23632 --- [MyMiniprogram] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-25T17:12:56.418+08:00  INFO 23632 --- [MyMiniprogram] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-11-25T17:17:51.403+08:00  INFO 23632 --- [MyMiniprogram] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-25T17:17:51.502+08:00  INFO 23632 --- [MyMiniprogram] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-11-25T17:17:57.533+08:00  INFO 27972 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 27972 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
+2026-11-25T17:17:57.538+08:00  INFO 27972 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-11-25T17:17:58.183+08:00  INFO 27972 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-25T17:17:58.187+08:00  INFO 27972 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-25T17:17:58.223+08:00  INFO 27972 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2026-11-25T17:17:58.997+08:00  INFO 27972 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-11-25T17:17:59.012+08:00  INFO 27972 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-25T17:17:59.013+08:00  INFO 27972 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-25T17:17:59.087+08:00  INFO 27972 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1500 ms
+2026-11-25T17:18:00.269+08:00  INFO 27972 --- [MyMiniprogram] [main] b.m.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@45905bff
+2026-11-25T17:18:00.491+08:00  INFO 27972 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-11-25T17:18:00.501+08:00  INFO 27972 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Started MyMiniprogramApplication in 3.498 seconds (process running for 3.908)
+2026-11-25T17:18:03.312+08:00  INFO 27972 --- [MyMiniprogram] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-25T17:18:03.312+08:00  INFO 27972 --- [MyMiniprogram] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-25T17:18:03.315+08:00  INFO 27972 --- [MyMiniprogram] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-11-25T17:19:04.264+08:00  INFO 27972 --- [MyMiniprogram] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-25T17:19:04.339+08:00  INFO 27972 --- [MyMiniprogram] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-11-25T17:19:09.960+08:00  INFO 41012 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 41012 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
+2026-11-25T17:19:09.963+08:00  INFO 41012 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-11-25T17:19:10.489+08:00  INFO 41012 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-25T17:19:10.491+08:00  INFO 41012 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-25T17:19:10.521+08:00  INFO 41012 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2026-11-25T17:19:11.245+08:00  INFO 41012 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-11-25T17:19:11.258+08:00  INFO 41012 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-25T17:19:11.258+08:00  INFO 41012 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-25T17:19:11.318+08:00  INFO 41012 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1318 ms
+2026-11-25T17:19:12.346+08:00  INFO 41012 --- [MyMiniprogram] [main] b.m.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@45905bff
+2026-11-25T17:19:12.516+08:00  INFO 41012 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-11-25T17:19:12.523+08:00  INFO 41012 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Started MyMiniprogramApplication in 3.008 seconds (process running for 3.366)
+2026-11-25T17:19:27.087+08:00  INFO 41012 --- [MyMiniprogram] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-25T17:19:27.088+08:00  INFO 41012 --- [MyMiniprogram] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-25T17:19:27.093+08:00  INFO 41012 --- [MyMiniprogram] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-11-25T17:29:35.888+08:00  INFO 41012 --- [MyMiniprogram] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-25T17:29:35.966+08:00  INFO 41012 --- [MyMiniprogram] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-11-25T17:31:15.575+08:00  INFO 30692 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 30692 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
+2026-11-25T17:31:15.578+08:00  INFO 30692 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-11-25T17:31:16.131+08:00  INFO 30692 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-25T17:31:16.134+08:00  INFO 30692 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-25T17:31:16.166+08:00  INFO 30692 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2026-11-25T17:31:16.929+08:00  INFO 30692 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-11-25T17:31:16.948+08:00  INFO 30692 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-25T17:31:16.949+08:00  INFO 30692 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-25T17:31:17.011+08:00  INFO 30692 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1389 ms
+2026-11-25T17:31:18.451+08:00  INFO 30692 --- [MyMiniprogram] [main] b.m.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@45905bff
+2026-11-25T17:31:19.700+08:00  INFO 30692 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-11-25T17:31:19.746+08:00  INFO 30692 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Started MyMiniprogramApplication in 4.588 seconds (process running for 4.947)
+2026-11-25T17:31:21.872+08:00  INFO 30692 --- [MyMiniprogram] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-25T17:31:21.874+08:00  INFO 30692 --- [MyMiniprogram] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-25T17:31:21.875+08:00  INFO 30692 --- [MyMiniprogram] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-11-25T17:35:36.724+08:00  INFO 30692 --- [MyMiniprogram] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-25T17:35:36.797+08:00  INFO 30692 --- [MyMiniprogram] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-11-25T17:35:42.862+08:00  INFO 10932 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 10932 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
+2026-11-25T17:35:42.866+08:00  INFO 10932 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-11-25T17:35:43.478+08:00  INFO 10932 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-25T17:35:43.480+08:00  INFO 10932 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-25T17:35:43.512+08:00  INFO 10932 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2026-11-25T17:35:44.467+08:00  INFO 10932 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-11-25T17:35:44.485+08:00  INFO 10932 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-25T17:35:44.486+08:00  INFO 10932 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-25T17:35:44.551+08:00  INFO 10932 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1640 ms
+2026-11-25T17:35:45.735+08:00  INFO 10932 --- [MyMiniprogram] [main] b.m.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@45905bff
+2026-11-25T17:35:45.909+08:00  INFO 10932 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-11-25T17:35:45.916+08:00  INFO 10932 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Started MyMiniprogramApplication in 3.532 seconds (process running for 3.889)
+2026-11-25T17:35:52.554+08:00  INFO 10932 --- [MyMiniprogram] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-25T17:35:52.555+08:00  INFO 10932 --- [MyMiniprogram] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-25T17:35:52.557+08:00  INFO 10932 --- [MyMiniprogram] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-11-25T17:54:55.136+08:00  INFO 10932 --- [MyMiniprogram] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-25T17:54:55.227+08:00  INFO 10932 --- [MyMiniprogram] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-11-25T17:55:00.226+08:00  INFO 26444 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 26444 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
+2026-11-25T17:55:00.228+08:00  INFO 26444 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-11-25T17:55:00.750+08:00  INFO 26444 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-25T17:55:00.753+08:00  INFO 26444 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-25T17:55:00.781+08:00  INFO 26444 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2026-11-25T17:55:01.509+08:00  INFO 26444 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-11-25T17:55:01.529+08:00  INFO 26444 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-25T17:55:01.529+08:00  INFO 26444 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-25T17:55:01.605+08:00  INFO 26444 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1337 ms
+2026-11-25T17:55:02.794+08:00  INFO 26444 --- [MyMiniprogram] [main] b.m.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@45905bff
+2026-11-25T17:55:02.953+08:00  INFO 26444 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-11-25T17:55:02.960+08:00  INFO 26444 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Started MyMiniprogramApplication in 3.17 seconds (process running for 3.534)
+2026-11-25T17:55:06.336+08:00  INFO 26444 --- [MyMiniprogram] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-25T17:55:06.337+08:00  INFO 26444 --- [MyMiniprogram] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-25T17:55:06.342+08:00  INFO 26444 --- [MyMiniprogram] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-11-25T17:56:22.547+08:00  INFO 26444 --- [MyMiniprogram] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-25T17:56:22.626+08:00  INFO 26444 --- [MyMiniprogram] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-11-25T19:20:52.512+08:00  INFO 42340 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 42340 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
+2026-11-25T19:20:52.517+08:00  INFO 42340 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-11-25T19:20:53.598+08:00  INFO 42340 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-25T19:20:53.602+08:00  INFO 42340 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-25T19:20:53.653+08:00  INFO 42340 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+2026-11-25T19:20:54.774+08:00  INFO 42340 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-11-25T19:20:54.796+08:00  INFO 42340 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-25T19:20:54.796+08:00  INFO 42340 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-25T19:20:54.888+08:00  INFO 42340 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2296 ms
+2026-11-25T19:20:56.676+08:00  INFO 42340 --- [MyMiniprogram] [main] b.m.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@45905bff
+2026-11-25T19:20:56.964+08:00  INFO 42340 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-11-25T19:20:56.977+08:00  INFO 42340 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Started MyMiniprogramApplication in 5.239 seconds (process running for 5.863)
+2026-11-25T19:21:05.974+08:00  INFO 42340 --- [MyMiniprogram] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-25T19:21:05.975+08:00  INFO 42340 --- [MyMiniprogram] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-25T19:21:05.978+08:00  INFO 42340 --- [MyMiniprogram] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-11-25T19:31:04.112+08:00  INFO 42340 --- [MyMiniprogram] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-25T19:31:04.249+08:00  INFO 42340 --- [MyMiniprogram] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-11-25T19:48:39.860+08:00  INFO 14652 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 14652 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
+2026-11-25T19:48:39.865+08:00  INFO 14652 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-11-25T19:48:40.884+08:00  INFO 14652 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-25T19:48:40.890+08:00  INFO 14652 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-25T19:48:40.945+08:00  INFO 14652 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
+2026-11-25T19:48:42.075+08:00  INFO 14652 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-11-25T19:48:42.101+08:00  INFO 14652 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-25T19:48:42.101+08:00  INFO 14652 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-25T19:48:42.204+08:00  INFO 14652 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2269 ms
+2026-11-25T19:48:44.090+08:00  INFO 14652 --- [MyMiniprogram] [main] b.m.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@b6b1987
+2026-11-25T19:48:44.392+08:00  INFO 14652 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-11-25T19:48:44.404+08:00  INFO 14652 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Started MyMiniprogramApplication in 5.322 seconds (process running for 6.049)
+2026-11-25T19:49:09.044+08:00  INFO 14652 --- [MyMiniprogram] [http-nio-8080-exec-6] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-25T19:49:09.045+08:00  INFO 14652 --- [MyMiniprogram] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-25T19:49:09.048+08:00  INFO 14652 --- [MyMiniprogram] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-11-25T19:50:25.076+08:00  INFO 14652 --- [MyMiniprogram] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-25T19:50:25.218+08:00  INFO 14652 --- [MyMiniprogram] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-11-25T19:50:28.556+08:00  INFO 28832 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Starting MyMiniprogramApplication using Java 17.0.21.0.2 with PID 28832 (D:\Basis_ououou7777777777\Java\MyMiniprogram\target\classes started by WIND in D:\Basis_ououou7777777777\Java\MyMiniprogram)
+2026-11-25T19:50:28.561+08:00  INFO 28832 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-11-25T19:50:29.464+08:00  INFO 28832 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-25T19:50:29.469+08:00  INFO 28832 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-25T19:50:29.521+08:00  INFO 28832 --- [MyMiniprogram] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+2026-11-25T19:50:30.591+08:00  INFO 28832 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-11-25T19:50:30.618+08:00  INFO 28832 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-25T19:50:30.619+08:00  INFO 28832 --- [MyMiniprogram] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-25T19:50:30.732+08:00  INFO 28832 --- [MyMiniprogram] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2103 ms
+2026-11-25T19:50:32.968+08:00  INFO 28832 --- [MyMiniprogram] [main] b.m.s.MybatisPlusApplicationContextAware : Register ApplicationContext instances org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@45905bff
+2026-11-25T19:50:33.437+08:00  INFO 28832 --- [MyMiniprogram] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-11-25T19:50:33.457+08:00  INFO 28832 --- [MyMiniprogram] [main] o.m.m.MyMiniprogramApplication           : Started MyMiniprogramApplication in 5.622 seconds (process running for 6.308)
+2026-11-25T19:50:34.969+08:00  INFO 28832 --- [MyMiniprogram] [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-25T19:50:34.970+08:00  INFO 28832 --- [MyMiniprogram] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-25T19:50:34.973+08:00  INFO 28832 --- [MyMiniprogram] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-11-25T19:54:54.731+08:00  INFO 28832 --- [MyMiniprogram] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-25T19:54:54.872+08:00  INFO 28832 --- [MyMiniprogram] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
