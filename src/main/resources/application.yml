@@ -1,0 +1,15 @@
+spring:
+  application:
+  name: redis-seckill-demo
+
+  data:
+    redis:
+      host: localhost
+      port: 59000
+      password: e65K4t8w2
+      lettuce:
+        pool:
+          enabled: true
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
