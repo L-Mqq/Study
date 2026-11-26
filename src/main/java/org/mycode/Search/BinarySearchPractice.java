@@ -39,7 +39,7 @@ public class BinarySearchPractice {
                 if (arr[mid] > target){
                     right = mid - 1;
                 }else {
-                    if (target < arr[right]){
+                    if (target <= arr[right]){
                         left = mid + 1;
                     }else {
                         right = mid - 1;
