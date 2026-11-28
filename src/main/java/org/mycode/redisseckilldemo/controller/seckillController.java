@@ -1,13 +1,17 @@
 package org.mycode.redisseckilldemo.controller;
 
+import com.alibaba.fastjson2.JSON;
 import jakarta.annotation.Resource;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.mycode.redisseckilldemo.model.SeckillOrder;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static org.mycode.redisseckilldemo.common.RedisKeyConstants.ORDER_QUEUE;
 
 @Slf4j
 @RestController
@@ -35,7 +39,7 @@ public class seckillController {
 
     //用户秒杀
     @PostMapping("/kill")
-    public Map<String,Object> seckill(@RequestParam Long userId){
+    public Map<String,Object> seckill(@RequestParam Long userId,@RequestParam Long productId){
         //创建hashmap 用于存放结果   `success`、`message`、`userId`
         Map<String,Object> result = new HashMap<>();
 
@@ -57,9 +61,12 @@ public class seckillController {
             result.put("userId",userId);
         }
 
-
         //成功则入队
         if (stock >= 0){
+            //把订单入队
+            SeckillOrder seckillOrder = new SeckillOrder(userId,productId,System.currentTimeMillis());
+            stringRedisTemplate.opsForList().leftPush(ORDER_QUEUE, JSON.toJSONString(seckillOrder));
+
             result.put("success","true");
             result.put("message","抢购成功，等待订单处理");
             result.put("userId",userId);
